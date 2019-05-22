@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://cdn.jsdelivr.net/gh/alfg/ping.js@0.2.2/dist/ping.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <style>
+        ul span {
+            color: green;
+        }
+
+        #bts {
+
+            padding: 5px 10px 5px 10px;
+            border: 0.5px solid rgba(200, 198, 198, 0.794);
+            border-radius: 25px;
+            display: flex;
+            justify-content: space-between;
+            width: 160px;
+        }
+
+        #container {
+            width: 190px;
+
+
+        }
+
+        #container>p {
+            text-align: center;
+        }
+
+        #siglas {
+            display: flex;
+
+            justify-content: space-between;
+        }
+
+        img {
+            height: 25px;
+            width: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <p> Verificação de Nós Ativos</p>
+        <div id="siglas">
+            <span>Nó <strong>Central</strong></span>
+            <span>Nó <strong>Corsan</strong></span>
+            <span>Nó <strong>Sema</strong></span>
+        </div>
+        <div id="bts">
+            <img id="bt1" src="https://cdn0.iconfinder.com/data/icons/shift-symbol/32/Complete_Symbol-512.png"
+                style="width: 25px; height: 25px;">
+            <img id="bt2" src="https://cdn0.iconfinder.com/data/icons/shift-symbol/32/Complete_Symbol-512.png"
+                style="width: 25px; height: 25px;">
+            <img id="bt3" src="https://cdn0.iconfinder.com/data/icons/shift-symbol/32/Complete_Symbol-512.png"
+                style="width: 25px; height: 25px;">
+        </div>
+    </div>
+
+</body>
+<script>
+    // Estou usando uma biblioteca de JS (ping.js) para fazer o ping de sites e verificar se as suas conexões estão ok.
+    var p = new Ping();
+    // Estou usando sites  para testes por enquanto.
+    p.ping("https://iede.hml.rs.gov.br/portal/home/", function (err, data) {
+        // Informa que deu erro no console
+        if (err) {
+            console.log("error loading resource")
+            $(document).ready(function () {
+                $("#bt1").attr('src', "https://www.freeiconspng.com/uploads/error-icon-4.png");
+            });
+        }
+
+    });
+    p.ping("https://google.com", function (err, data) {
+        // Informa que due erro no console
+        if (err) {
+            console.log("error loading resource")
+            $(document).ready(function () {
+                $("#bt2").attr('src', "https://www.freeiconspng.com/uploads/error-icon-4.png");
+            });
+        }
+
+    });
+    p.ping("http://192.168.0.249", function (err, data) {
+        // Informa que due erro no console
+        if (err) {
+            console.log("error loading resource", err)
+            $(document).ready(function () {
+                $("#bt3").attr('src', "https://www.freeiconspng.com/uploads/error-icon-4.png");
+            });
+        }
+
+    });
+</script>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="js/builder.js"></script>
+
+</head>
+
+<body>
+
+	<div style="margin-left:3.2%; width: 94.5%" class="track carousel">
+		<div class="inner margem-superior">
+
+			<div class="view-port">
+				<div id="carousel" class="slider-container">
+
+				</div>
+			</div>
+		</div>
+
+		<div class="bullet-pagination"></div>
+
+		<div class="pagination">
+			<a href="#" class="prev disabled"></a>
+			<a href="#" class="next disabled"></a>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(document).on('ready', function () {
+
+			buildDocument("94488f23d1a2424f904d30683ac83c71", function(data){
+   		
+				var html = "";
+				for(var i in data){					
+					html += builderHtml(data[i]);
+				}
+				
+				$("#carousel").html(html);
+				carregar();
+     		});
+
+			$.responsiveHub({
+				layouts: {
+					300: "phone",
+					481: "small-tablet",
+					731: "tablet",
+					981: "web"
+				},
+				defaultLayout: "web"
+			});
+
+		});
+
+		function carregar() {
+			$.getScript("js/carousel.js").done(function (script, response) {
+				console.log(response);
+			}).fail(function (jqxhr, settings, exception) {
+				console.log("falha ao carregar carrosel.");
+			});
+		}
+
+		function builderHtml(item) {
+
+			var html = '<div class="item col-xs-18 col-sm-6 col-md-3">';
+			html += '<div class="thumbnail" style="height: 350px"> <img src="' + item.path + '" class="thumbnail-img">';
+			html += '<div class="caption">';
+			html += '<p class="title-box"><b class="font-title">' + item.titulo + '</b></p>';
+			html += '<p class="text-darkest-gray"><i class="fa fa-line-chart"></i> visualizações: ' + item.views + '</p>';
+			html += '<p><a style="padding-top: 4%" class="format-text">' + item.descricao + '</a></p></div>';
+			html += '<div clas="row"><a type="button" href="' + item.url + '" style="text-decoration:none"';
+			html += 'target="_blank" class="btn btn-primary btn-open">Abrir</a><a type="button"';
+			html += 'href="https://pcrj.maps.arcgis.com/home/item.html?id=' + item.idAgol + '"';
+			html += 'target="_blank" class="btn btn-default btn-close">Detalhes</a></div>';
+			html += '</a></div></div>';
+
+			return html;
+		}
+	</script>
+
+	<script type="text/javascript" src="lib/modernizr.mediaqueries.transforms3d.js"></script>
+	<script type="text/javascript" src="lib/responsive-hub.js"></script>
+	<script type="text/javascript" src="src/jquery.silver_track.js" charset="utf-8"></script>
+
+	<script type="text/javascript" src="src/plugins/jquery.silver_track.navigator.js" charset="utf-8"></script>
+	<script type="text/javascript" src="src/plugins/jquery.silver_track.responsive_hub_connector.js" charset="utf-8"></script>
+	<script type="text/javascript" src="src/plugins/jquery.silver_track.circular_navigator.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/script.js" charset="utf-8"></script>
+
+</body>
+
+</html>
