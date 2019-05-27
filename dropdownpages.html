@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        /*General styles for body*/
+        body {
+            margin: 0;
+
+            background: #fff;
+            color: #222;
+        }
+
+        .im2 {
+            float: right;
+        }
+
+        .center {
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        #dropdown-header {
+            float: left;
+        }
+
+        .btn {
+            background-color: #fff;
+            color: black;
+            border-color: #fff;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: rgb(231, 229, 229);
+            color: black;
+        }
+    </style>
+</head>
+
+
+<header>
+    <div class="center">
+        <div class="col-xs-12 col-sm-6 col-md-6 card-container">
+            <div class="img-container">
+                <a href="https://estado.rs.gov.br/secretaria-de-governanca-e-gestao-estrategica" target="_parent">
+                    <img class="img-responsive" src="https://planejamento.rs.gov.br/themes/site/images/logos/logo.png"
+                        alt="Survey123 Mobile View"
+                        style="max-height: 104px; width: 388px; min-width: 190px; min-height: 60px;">
+                </a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 card-container">
+            <div class="img-container im2">
+                <a href="https://www.estado.rs.gov.br/inicial" target="_parent">
+                    <img class="img-responsive"
+                        src="https://planejamento.rs.gov.br/themes/site/images/logos/brasao_RS.png"
+                        alt="Survey123 Mobile View"
+                        style="max-height: 95px; width: 146px; min-height: 45px; min-width: 100px;">
+                </a>
+            </div>
+        </div>
+</header>
+<section id="dropdown-header">
+    <a href="https://iede.hml.rs.gov.br/portal/apps/sites/#/iede" style="color:black" target="_parent"><button
+            class="btn btn-secondary" type="button">
+            Página Inicial
+        </button></a>
+    <span class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Institucional
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="https://iede.hml.rs.gov.br/portal/apps/sites/#/iede/pages/o-que-e "
+                target="_parent">O que é IEDE</a>
+            <a class="dropdown-item" href="https://iede.hml.rs.gov.br/portal/apps/sites/#/iede/pages/quem-somos"
+                target="_parent">Histórico</a>
+            <a class="dropdown-item" href="#">Conceitos</a>
+            <a class="dropdown-item" href="#">Instituições Parceiras</a>
+            <a class="dropdown-item" href="https://iede.hml.rs.gov.br/portal/apps/sites/#/iede/pages/equipe"
+                target="_parent">Equipe Técnica</a>
+            <a class="dropdown-item" href="https://iede.hml.rs.gov.br/portal/apps/sites/#/iede/pages/agenda"
+                target="_parent">Agenda</a>
+    </span>
+    </div>
+    <span class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Materiais e Documentos
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Manuais</a>
+            <a class="dropdown-item" href="#">Legislação</a>
+            <a class="dropdown-item" href="#">Normas e Padrões</a>
+            <a class="dropdown-item" href="#">Links(IDE, software...)</a>
+        </div>
+    </span>
+    <span class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Área Restrita
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Adm. ESRI Geoportal Server</a>
+            <a class="dropdown-item" href="#">Adm. ArcGis Enterpreise</a>
+            <a class="dropdown-item" href="#">Estatísticas de Acesso</a>
+        </div>
+    </span>
+    <span class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Contato
+        </button>
+    </span>
+    <span class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Mapa do Site
+        </button>
+    
+    </span>
+</section>
+</body>
+
+</html>
